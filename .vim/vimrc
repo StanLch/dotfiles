@@ -584,9 +584,9 @@ if has("win32")
 else
     Bundle 'Valloric/YouCompleteMe'
     Bundle 'Valloric/ListToggle'
-    Bundle 'scrooloose/syntastic'
 endif
 
+Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'lilydjwg/fcitx.vim'
