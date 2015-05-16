@@ -2,6 +2,7 @@
 # editor
 export EDITOR='vim'
 alias vi='vim'
+alias lvim="vim -c \"normal '0\"" #open last edited file
 
 # ls
 LS_OPTIONS='--color=auto'
@@ -11,6 +12,21 @@ alias ll='ls $LS_OPTIONS -l'
 alias la='ls $LS_OPTIONS -a'
 alias lg='ls $LS_OPTIONS | grep -i'
 alias l='ls $LS_OPTIONS -al'
+alias l.='ls -d .* $LS_OPTIONS'
+
+# cd
+cdl() { cd "$@" && pwd ; la; }
+alias ..='cdl ..'
+alias ...='cd ../..'
+
+# grep
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# history
+alias h='history'
+alias hg='history | grep -i'
 
 # pacman
 alias pacu='pacman -Syu'
@@ -27,5 +43,4 @@ alias bz2='tar jxvf'
 alias du='du -h'
 alias df='df -h'
 alias lsblk='lsblk -l -f'
-alias clr='clear'
-alias grep='grep --color=auto'
+alias c='clear'
