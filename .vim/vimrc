@@ -368,8 +368,8 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 vnoremap <silent> gv :call VisualSelection('gv')<CR>
 vnoremap <leader>f :call VisualSelection('gvc')<CR>
 
-" Open Ack and put the cursor in the right position
-map <leader>g :Ack ""<left>
+" Open Ag and put the cursor in the right position
+map <leader>g :Ag ""<left>
 
 " 当前文件查找字符串
 map <leader><space> :vimgrep // <C-R>%<C-A><left><left><left><left><left><left><left><left>
@@ -447,9 +447,9 @@ function! VisualSelection(direction) range
     if a:direction == 'b'
         execute "normal ?" . l:pattern . "^M"
     elseif a:direction == 'gv'
-        call CmdLine("Ack \"" . l:pattern . "\" " )
+        call CmdLine("Ag \"" . l:pattern . "\" " )
     elseif a:direction == 'gvc'
-        call CmdLine("Ack \"" . l:pattern . "\" " . '<C-R>%<C-A>' )
+        call CmdLine("Ag \"" . l:pattern . "\" " . '<C-R>%<C-A>' )
     elseif a:direction == 'replace'
         call CmdLine("%s" . '/'. l:pattern . '/')
     elseif a:direction == 'f'
@@ -590,7 +590,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'lilydjwg/fcitx.vim'
-Bundle 'mileszs/ack.vim'
+Bundle 'rking/ag.vim'
 Bundle 'majutsushi/tagbar'
 
 Bundle 'altercation/vim-colors-solarized'
@@ -645,6 +645,10 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
 let g:indentLine_color_gui = '#A4E57E'
+
+" ag
+let g:ag_prg = 'ag --vimgrep --smart-case --worker=4'
+let g:ag_highlight = 1
 
 " highlight one column
 map ,ch :call SetColorColumn()<CR>
