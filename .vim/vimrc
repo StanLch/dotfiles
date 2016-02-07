@@ -564,66 +564,66 @@ set nocompatible                " be iMproved
 filetype off                    " required!
 
 if has("win32")
-    set rtp+=$VIM/vimfiles/bundle/vundle/
+    set rtp+=$VIM/vimfiles/bundle/Vundle.vim
     call vundle#rc('$VIM/vimfiles/bundle/')
 else
-    set rtp+=~/.vim/bundle/vundle/
+    set rtp+=~/.vim/bundle/Vundle.vim
     call vundle#rc()
 endif
 
 
 
 " let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-"my Bundle here:
+"my Plugin here:
 "..................................
 " original repos on github
 if has("win32")
-    Bundle 'Shougo/neocomplcache.vim'
+    Plugin 'Shougo/neocomplcache.vim'
 else
-    Bundle 'Valloric/YouCompleteMe'
-    Bundle 'Valloric/ListToggle'
+    Plugin 'Valloric/YouCompleteMe'
+    Plugin 'Valloric/ListToggle'
 endif
 
-Bundle 'scrooloose/syntastic'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'lilydjwg/fcitx.vim'
-Bundle 'rking/ag.vim'
-Bundle 'majutsushi/tagbar'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'lilydjwg/fcitx.vim'
+Plugin 'rking/ag.vim'
+Plugin 'majutsushi/tagbar'
 
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'tomasr/molokai'
-Bundle 'nanotech/jellybeans.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomasr/molokai'
+Plugin 'nanotech/jellybeans.vim'
 
-Bundle 'Blackrush/vim-gocode'
+Plugin 'Blackrush/vim-gocode'
 
 if has("gui_running")
-    Bundle 'bling/vim-airline'
+    Plugin 'bling/vim-airline'
     "let g:airline_enable_branch     = 1
     let g:airline_enable_syntastic  = 0
 endif
 
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'terryma/vim-multiple-cursors'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'terryma/vim-multiple-cursors'
 
 " snippets
-Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
-" Bundle 'vim-scripts/lua.vim'
-" Bundle 'xolox/vim-misc'
+" Plugin 'vim-scripts/lua.vim'
+" Plugin 'xolox/vim-misc'
 
 "..................................
 " vim-scripts repos
-"Bundle 'taglist.vim'
-Bundle 'a.vim'
-"Bundle 'OmniCppComplete'
+"Plugin 'taglist.vim'
+Plugin 'a.vim'
+"Plugin 'OmniCppComplete'
 
 "..................................
 " non github repos
-" Bundle 'git://git.wincent.com/command-t.git'
+" Plugin 'git://git.wincent.com/command-t.git'
 
 filetype plugin indent on
 
